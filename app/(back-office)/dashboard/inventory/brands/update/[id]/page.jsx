@@ -1,0 +1,14 @@
+import React from "react";
+import NewBrand from "../../new/page";
+import { getData } from "@/lib/getData";
+
+export default async function Updates({params:{id}})
+{   
+    const data = await getData(`brands/${id}`);
+    console.log(data);
+    return(
+        <div>
+            <NewBrand initialData = {data} isUpdate={true}/>
+        </div>
+    )
+}
